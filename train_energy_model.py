@@ -9,8 +9,8 @@ import Live_plot
 class energy_model():
 
     def __init__(self):
-        train_path = "/home/mhmdlinux/Desktop/DGM/dataset/MNist/mnist_train.csv"
-        test_path  = "/home/mhmdlinux/Desktop/DGM/dataset/MNist/mnist_test.csv"
+        train_path = "./dataset/MNist/mnist_train.csv"
+        test_path  = "./dataset/MNist/mnist_test.csv"
 
         train_df = pd.read_csv(train_path)
         test_df  = pd.read_csv(test_path)
