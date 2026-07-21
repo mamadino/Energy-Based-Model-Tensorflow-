@@ -5,3 +5,10 @@
 This repository contains an initial implementation of an Energy-Based Model (EBM) for image generation using TensorFlow. 
 The current implementation has been trained on the MNIST dataset, but the project is not yet complete. 
 Future updates will include code improvements, additional experiments, and support for more datasets.
+## Generated Samples
+
+![Generated samples](image.png)
+
+## Model PreTraining Accuracy-Loss curves
+
+#![Training curve](images/training_curve.png)
