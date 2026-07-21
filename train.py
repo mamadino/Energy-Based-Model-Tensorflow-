@@ -30,7 +30,7 @@ class Train:
             avg_loss /= steps
             avg_neg_energy /= steps
             avg_pos_energy /= steps
-            self.ebm.save('/home/mhmdlinux/Desktop/DGM/HWs/HW5_5/EBM_repo/pretrained_model/')
+            self.ebm.save('./EBM_repo/pretrained_model/')
             print('Generating a sample till now...')
             self.ebm.inference(K=200, dt=0.01)
 
