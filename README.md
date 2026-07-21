@@ -11,4 +11,4 @@ Future updates will include code improvements, additional experiments, and suppo
 
 ## Model PreTraining Accuracy-Loss curves
 
-#![Training curve](images/training_curve.png)
+![Training curve](acc_loss.png)
