@@ -21,10 +21,10 @@ class EBM(keras.Model):
         self.sample_buffer = tf.random.uniform(shape=(replay_buffer_size, 28, 28, 1), minval=0.0, maxval=1.0)
         self.x_train, self.y_train = self.dataloader()
         print('x_train shape: ', self.x_train.shape)
-        pretrained_model_path = "/home/mhmdlinux/Desktop/DGM/HWs/HW5_5/EBM_repo/pretrained_model/tiny_resnet_mnist.keras"
+        pretrained_model_path = "./pretrained_model/tiny_resnet_mnist.keras"
         self.model = modified_energy_model.modified_model(pretrained_model_path)
         if load_EBM:
-            self.load('/home/mhmdlinux/Desktop/DGM/HWs/HW5_5/EBM_repo/pretrained_model/')
+            self.load('./pretrained_model/')
         self.optimizer = keras.optimizers.Adam(learning_rate=1e-4)
 
     def call(self, x):
@@ -61,7 +61,7 @@ class EBM(keras.Model):
         return x
     
     def dataloader(self):
-        train_path = "/home/mhmdlinux/Desktop/DGM/dataset/MNist/mnist_train.csv"
+        train_path = "./dataset/MNist/mnist_train.csv"
         train_df = pd.read_csv(train_path)
         y_train = train_df.iloc[:, 0].values
         x_train = train_df.iloc[:, 1:].values
@@ -100,7 +100,7 @@ class EBM(keras.Model):
     
     def inference(self, K, dt, only_inference=False, inpainting=False):
         if inpainting:
-            train_path = "/home/mhmdlinux/Desktop/DGM/dataset/MNist/mnist_train.csv"
+            train_path = "./dataset/MNist/mnist_train.csv"
             train_df = pd.read_csv(train_path)
             x_train = train_df.iloc[:, 1:].values
             x_train = x_train.astype("float32") / 255.0
